@@ -1,0 +1,11 @@
+/usr/lib/python2.7
+/usr/lib/python2.7/plat-x86_64-linux-gnu
+/usr/lib/python2.7/lib-tk
+/usr/lib/python2.7/lib-dynload
+/home/osboxes/.local/lib/python2.7/site-packages
+/usr/local/lib/python2.7/dist-packages
+/usr/local/lib/python2.7/dist-packages/pyang-1.7-py2.7.egg
+/usr/local/lib/python2.7/dist-packages/mininet-2.3.0d1-py2.7.egg
+/home/osboxes/.local/lib/python2.7/site-packages
+/usr/lib/python2.7/dist-packages
+/usr/lib/python2.7/dist-packages/gtk-2.0
