@@ -1,0 +1,4 @@
+{"namespace":"urn:onf:params:xml:ns:yang:",
+"organization":"OFC SC-449",
+"contact":"Ricard Vilalta <mailto:ricard.vilalta@cttc.es>, Karthik Sethuraman <mailto:karthik.sethuraman@necam.com>",
+"revision":{"date":"2017-03-20", "description":"TAPI Extensions", "reference":"TAPI SDK (Snowmass) Project"}}

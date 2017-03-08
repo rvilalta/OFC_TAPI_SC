@@ -1,0 +1,25 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "ofc-tapi-ext API generated from ofc-tapi-ext.yang",
+        "title": "ofc-tapi-ext API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {},
+    "definitions": {
+        "OfcNodeExt": {
+            "description": "none",
+            "properties": {
+                "partNumber": {
+                    "type": "string",
+                    "description": "none"
+                }
+            }
+        }
+    }
+}
