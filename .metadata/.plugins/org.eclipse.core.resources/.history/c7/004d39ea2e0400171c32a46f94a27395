@@ -1,0 +1,33 @@
+module ofc-tapi-ext {
+    namespace "urn:onf:params:xml:ns:yang:OfcTapiExt";
+    prefix ofc-tapi-ext;
+    import tapi-topology {
+        prefix tapi-topology;
+    }
+    organization "Open Networking Foundation (ONF) / Open Transport Working Group(OTWG) / Transport API (TAPI) Project";
+    contact "
+        WG Web: TAPI SDK Project <http://opensourcesdn.org/projects/project-snowmass/>
+        WG List: TAPI Discussion list <mailto: transport-api@login.opennetworking.org>,
+        WG Chair: Karthik Sethuraman <mailto:karthik.sethuraman@necam.com>,
+        Editor: Ricard Vilalta <mailto:ricard.vilalta@cttc.es>";
+    description "none";
+    revision 2016-12-15 {
+        description "TAPI SDK 1.1.alpha";
+        reference "ONF-TR-527, ONF-TR-512, ONF-TR-531, RFC 6020 and RFC 6087";
+    }
+    augment "/tapi-common:context/tapi-topology:topology/node/uuid" {
+        uses ofc-node-ext;
+        description "none";
+    }
+    /***********************
+    * package diagrams
+    **********************/ 
+        grouping ofc-node-ext {
+            leaf part-number {
+                type string;
+                description "none";
+            }
+            description "none";
+        }
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_zUTaADOEEeansfg7-s4Unw/16" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_zUTaADOEEeansfg7-s4Unw/16 /TapiModel/OpenModel_Profile.profile.uml#_zUTaATOEEeansfg7-s4Unw">
+  <uml:Model xmi:id="_QLkdYAQUEeeyYqT-86L8Bg" name="OfcTapiExt">
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QO-9wAQUEeeyYqT-86L8Bg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QQmHUgQUEeeyYqT-86L8Bg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHUwQUEeeyYqT-86L8Bg" key="Version" value="0.2.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVAQUEeeyYqT-86L8Bg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVQQUEeeyYqT-86L8Bg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVgQUEeeyYqT-86L8Bg" key="Date" value="2016-06-16"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVwQUEeeyYqT-86L8Bg" key="Author" value="TAPI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QO_k0AQUEeeyYqT-86L8Bg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/TapiModel/OpenModel_Profile.profile.uml#_zUTaATOEEeansfg7-s4Unw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/TapiModel/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelElement xmi:id="_QQmHUAQUEeeyYqT-86L8Bg" base_Element="_QLkdYAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_QQmHUQQUEeeyYqT-86L8Bg" base_Element="_QO-9wAQUEeeyYqT-86L8Bg"/>
+</xmi:XMI>

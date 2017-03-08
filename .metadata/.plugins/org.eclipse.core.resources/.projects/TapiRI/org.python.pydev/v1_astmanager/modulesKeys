@@ -397,6 +397,10 @@ funcs_TapiVirtualNetwork.createvirtualnetworkserviceImpl|/home/osboxes/OFC_TAPI_
 funcs_TapiVirtualNetwork.deletevirtualnetworkserviceImpl|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/funcs_TapiVirtualNetwork/deletevirtualnetworkserviceImpl.py
 funcs_TapiVirtualNetwork.getvirtualnetworkservicedetailsImpl|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/funcs_TapiVirtualNetwork/getvirtualnetworkservicedetailsImpl.py
 funcs_TapiVirtualNetwork.getvirtualnetworkservicelistImpl|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/funcs_TapiVirtualNetwork/getvirtualnetworkservicelistImpl.py
+mapping_Odl.odl_flows|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/mapping_Odl/odl_flows.py
+mapping_Odl.odl_topology|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/mapping_Odl/odl_topology.py
+mapping_Onos.onos_flows|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/mapping_Onos/onos_flows.py
+mapping_Onos.onos_topology|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/mapping_Onos/onos_topology.py
 notification_client|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/notification_client.py
 notification_factory|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/notification_factory.py
 objects_Tapi.__init__|/home/osboxes/OFC_TAPI_SC/Snowmass/TAPI_RI/objects_Tapi/__init__.py

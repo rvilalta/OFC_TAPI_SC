@@ -1,0 +1,3 @@
+module: ofc-tapi-ext
+  augment /tapi-common:context/tapi-topology:topology/tapi-topology:node:
+    +--ro part-number?   string

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_zUTaADOEEeansfg7-s4Unw/16" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_zUTaADOEEeansfg7-s4Unw/16 /TapiModel/OpenModel_Profile.profile.uml#_zUTaATOEEeansfg7-s4Unw">
+  <uml:Model xmi:id="_QLkdYAQUEeeyYqT-86L8Bg" name="OfcTapiExt">
+    <packagedElement xmi:type="uml:Package" xmi:id="_S8RDYAQUEeeyYqT-86L8Bg" name="Imports">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_gJKigAQUEeeyYqT-86L8Bg">
+        <importedPackage xmi:type="uml:Model" href="../TapiModel/TapiTopology.uml#_nbYiwDA4Eea4fKwSGMr6CA"/>
+      </packageImport>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VWBwEAQUEeeyYqT-86L8Bg" name="ObjectClasses"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_XzQngAQUEeeyYqT-86L8Bg" name="Diagrams">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0AR24AQUEeeyYqT-86L8Bg" name="OfcNodeExt">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-RzKAAQUEeeyYqT-86L8Bg" name="partNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_tRsNEAQWEeeyYqT-86L8Bg" name="target">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_tRsNEQQWEeeyYqT-86L8Bg" value="/tapi-common:context/tapi-topology:topology/node/uuid"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_aRaE8AQUEeeyYqT-86L8Bg" name="Associations"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_QO-9wAQUEeeyYqT-86L8Bg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QQmHUgQUEeeyYqT-86L8Bg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHUwQUEeeyYqT-86L8Bg" key="Version" value="0.2.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVAQUEeeyYqT-86L8Bg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVQQUEeeyYqT-86L8Bg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVgQUEeeyYqT-86L8Bg" key="Date" value="2016-06-16"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QQmHVwQUEeeyYqT-86L8Bg" key="Author" value="TAPI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QO_k0AQUEeeyYqT-86L8Bg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/TapiModel/OpenModel_Profile.profile.uml#_zUTaATOEEeansfg7-s4Unw"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/TapiModel/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelElement xmi:id="_QQmHUAQUEeeyYqT-86L8Bg" base_Element="_QLkdYAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_QQmHUQQUEeeyYqT-86L8Bg" base_Element="_QO-9wAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_TAGagAQUEeeyYqT-86L8Bg" base_Element="_S8RDYAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_VWC-MAQUEeeyYqT-86L8Bg" base_Element="_VWBwEAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_XzQngQQUEeeyYqT-86L8Bg" base_Element="_XzQngAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_aRbTEAQUEeeyYqT-86L8Bg" base_Element="_aRaE8AQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_gJLwoAQUEeeyYqT-86L8Bg" base_Element="_gJKigAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_0ASd8AQUEeeyYqT-86L8Bg" base_Class="_0AR24AQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_0ASd8QQUEeeyYqT-86L8Bg" base_Element="_0AR24AQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-RzxEAQUEeeyYqT-86L8Bg" base_StructuralFeature="_-RzKAAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_-R0_MAQUEeeyYqT-86L8Bg" base_Element="_-RzKAAQUEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_tRs0IAQWEeeyYqT-86L8Bg" base_StructuralFeature="_tRsNEAQWEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_tRtbMAQWEeeyYqT-86L8Bg" base_Element="_tRsNEAQWEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:OpenModelElement xmi:id="_tRtbMQQWEeeyYqT-86L8Bg" base_Element="_tRsNEQQWEeeyYqT-86L8Bg"/>
+  <OpenModel_Profile:SpecTarget xmi:id="_vYndUAQWEeeyYqT-86L8Bg" base_StructuralFeature="_tRsNEAQWEeeyYqT-86L8Bg"/>
+</xmi:XMI>
