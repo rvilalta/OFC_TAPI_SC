@@ -1,8 +1,10 @@
 # Example, only works for COP
 import json
-
+from onos_topology import onos_topology
 from objects_common.keyedArrayType import KeyedArrayType
 from objects_Tapi.contextSchema import ContextSchema as ContextSchema_object
+
+
 
 """
 class TopLevelObject(jsonObject):
@@ -32,6 +34,7 @@ filename = 'server_backend_state.json'
 
 Context = ContextSchema_object()
 
+
 def save_state():
     json_struct = {}
     json_struct['Context'] = Context.json_serializer()
@@ -50,3 +53,10 @@ def load_state():
     global Context
     Context = ContextSchema_object(json_struct['Context'])
     return True
+    
+def connect_sdn_controller(ip, port, ctl_type, user, password):
+    if ctl_type == "ONOS":
+        onos_ctl=onos_topology()
+        topo=onos_ctl.retrieveTopology(ip, port, user, password)
+        print "connected"
+
