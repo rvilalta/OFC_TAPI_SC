@@ -8,6 +8,7 @@ from objects_TapiTopology.topology import Topology as Topology
 from objects_TapiTopology.nodeEdgePoint import NodeEdgePoint as NodeEdgePoint
 from objects_TapiTopology.linkPort import LinkPort as LinkPort
 from objects_TapiTopology.link import Link as Link
+from objects_Tapi._serviceEndPointSchema import _serviceEndPointSchema
 
 import json
 import backend as be
@@ -48,7 +49,6 @@ class onos_topology():
 
     def parseDevices(self, ip, port, user, password, devices):
         for dev in devices["devices"]:
-            print dev
             node_id=dev["id"]
             node = Node({   "uuid":node_id, 
                             "_ownedNodeEdgePoint": [], 
@@ -62,8 +62,8 @@ class onos_topology():
                 nep_obj=NodeEdgePoint({"uuid":nep['port']})
                 node._ownedNodeEdgePoint[nep['port']]=nep_obj
             be.Context._topology[TOPOLOGY_UUID]._node[node_id] = node
-            print "END"+node_id
-            
+            sep = _serviceEndPointSchema({"uuid": node_id })
+            be.Context._serviceEndPoint[node_id]=sep
     def parseLinks(self, links):
         link_id=0
         for link in links["links"]:
