@@ -7,6 +7,13 @@
 			</list>
 		</section>
 	</section>
+	<section name="org.eclipse.papyrus.infra.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/TapiExtensions/OfcTapiExt.uml:uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/TapiModel/TapiCommon.uml#_6efrYNnVEeWIOYiRCk5bbQ"/>
+			</list>
+		</section>
+	</section>
 	<section name="org.eclipse.papyrus.infra.emf.customizationManager">
 	</section>
 </section>
