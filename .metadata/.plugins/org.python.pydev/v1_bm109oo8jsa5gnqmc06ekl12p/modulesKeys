@@ -5,6 +5,8 @@ MODULES_MANAGER_V2
 MODULES_MANAGER_V2
 BaseHTTPServer|/usr/lib/python2.7/BaseHTTPServer.py
 Bastion|/usr/lib/python2.7/Bastion.py
+BeautifulSoup|/usr/local/lib/python2.7/dist-packages/BeautifulSoup.py
+BeautifulSoupTests|/usr/local/lib/python2.7/dist-packages/BeautifulSoupTests.py
 CDROM|/usr/lib/python2.7/plat-x86_64-linux-gnu/CDROM.py
 CGIHTTPServer|/usr/lib/python2.7/CGIHTTPServer.py
 Canvas|/usr/lib/python2.7/lib-tk/Canvas.py

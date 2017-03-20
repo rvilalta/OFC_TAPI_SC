@@ -22,7 +22,23 @@ module ofc-tapi-ext {
     * package object-classes
     **********************/ 
         grouping ofc-node-ext {
-            leaf part-number {
+            list part-info {
+                key 'serial-number';
+                uses part-info;
+                description "none";
+            }
+            description "none";
+        }
+
+    /***********************
+    * package diagrams
+    **********************/ 
+        grouping part-info {
+            leaf model-type {
+                type string;
+                description "none";
+            }
+            leaf serial-number {
                 type string;
                 description "none";
             }

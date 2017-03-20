@@ -254,7 +254,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_1i9qKQzyEee0a6pWuQkB6w" x="12" y="19"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_1i9qKgzyEee0a6pWuQkB6w" type="6034">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1i9qKwzyEee0a6pWuQkB6w" x="-14" y="16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1i9qKwzyEee0a6pWuQkB6w" y="-20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_1i9DEQzyEee0a6pWuQkB6w"/>
     <element xmi:type="uml:Association" href="OfcTapiExt.uml#_1iCdEAzyEee0a6pWuQkB6w"/>

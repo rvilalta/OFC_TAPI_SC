@@ -72,7 +72,7 @@
   <OpenModel_Profile:OpenModelElement xmi:id="_x53ucAzwEee0a6pWuQkB6w" base_Element="_x1Df4AzwEee0a6pWuQkB6w"/>
   <OpenModel_Profile:OpenModelClass xmi:id="_TKe-EAzyEee0a6pWuQkB6w" base_Class="_TG7TwAzyEee0a6pWuQkB6w"/>
   <OpenModel_Profile:OpenModelElement xmi:id="_TKflIAzyEee0a6pWuQkB6w" base_Element="_TG7TwAzyEee0a6pWuQkB6w"/>
-  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZkKc8AzyEee0a6pWuQkB6w" base_StructuralFeature="_ZkJO0AzyEee0a6pWuQkB6w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZkKc8AzyEee0a6pWuQkB6w" base_StructuralFeature="_ZkJO0AzyEee0a6pWuQkB6w"/>
   <OpenModel_Profile:OpenModelElement xmi:id="_ZkLEAAzyEee0a6pWuQkB6w" base_Element="_ZkJO0AzyEee0a6pWuQkB6w"/>
   <OpenModel_Profile:OpenModelAttribute xmi:id="_cnENQQzyEee0a6pWuQkB6w" base_StructuralFeature="_cnENQAzyEee0a6pWuQkB6w"/>
   <OpenModel_Profile:OpenModelElement xmi:id="_cnE0UAzyEee0a6pWuQkB6w" base_Element="_cnENQAzyEee0a6pWuQkB6w"/>
