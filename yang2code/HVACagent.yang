@@ -1,0 +1,47 @@
+module HVACagent {
+    namespace "urn:CTTC:HVACagent";
+    prefix HVACagent;
+    organization "CTTC";
+    contact "ricard(dot)vilalta(at)cttc(dot)es";
+    description "YANG model for a HVAC agent";
+    revision 2016-06-17 {
+        description "Latest revision";
+    }
+    
+	typedef Status {
+		type enumeration {
+			 enum Stopped;
+			 enum Running;
+			 enum Error;
+		}
+	}
+	 
+    grouping Temperature {
+        leaf TempCentigrads {
+            type decimal64;
+        }
+    }
+    
+    grouping Heat {
+        leaf Status {
+			type Status;
+		}
+    }
+    
+	grouping Ac {
+		leaf Status {
+			type Status;
+		}
+	}
+	
+	grouping HVAC {
+		uses Temperature;
+		uses Heat;
+		uses AC;	
+	}
+	
+	container HVAC {
+		uses HVAC;
+	}
+	
+}
