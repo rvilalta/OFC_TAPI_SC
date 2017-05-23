@@ -7,41 +7,41 @@ module HVACagent {
     revision 2016-06-17 {
         description "Latest revision";
     }
-    
-	typedef Status {
-		type enumeration {
-			 enum Stopped;
-			 enum Running;
-			 enum Error;
-		}
-	}
-	 
-    grouping Temperature {
-        leaf TempCentigrads {
-            type decimal64;
+
+    typedef Status {
+        type enumeration {
+            enum Stopped;
+            enum Running;
+            enum Error;
         }
     }
-    
-    grouping Heat {
-        leaf Status {
-			type Status;
-		}
+
+    grouping Temperature {
+        leaf TempCentigrads {type int32;}
     }
-    
-	grouping Ac {
-		leaf Status {
-			type Status;
-		}
-	}
-	
-	grouping HVAC {
-		uses Temperature;
-		uses Heat;
-		uses AC;	
-	}
-	
-	container HVAC {
-		uses HVAC;
-	}
-	
+
+    grouping Heat {
+        leaf Status {type Status;}
+    }
+
+    grouping Ac {
+        leaf Status {type Status;}
+    }
+
+    grouping HVAC {
+        container Temperature {
+            config false;
+            uses Temperature;
+        }
+        container Heat {
+            uses Heat;
+        }
+        container Ac {
+            uses Ac;
+        }
+    }
+
+    container HVAC {
+        uses HVAC;
+    }
 }

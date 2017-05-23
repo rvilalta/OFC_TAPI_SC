@@ -1,0 +1,54 @@
+'Download plantuml from http://plantuml.sourceforge.net/ 
+'Generate png with java -jar plantuml.jar <file> 
+'Output in img/<module>.png 
+'If Java spits out memory error increase heap size with java -Xmx1024m  -jar plantuml.jar <file> 
+@startuml img/HVACagent.png 
+hide empty fields 
+hide empty methods 
+hide <<case>> circle
+hide <<augment>> circle
+hide <<choice>> circle
+hide <<leafref>> stereotype
+hide <<leafref>> circle
+page 1x1 
+Title HVACagent 
+note top of HVACagent_HVACagent : <b>Namespace: </b> urn:CTTC:HVACagent \n<b>Prefix: </b> HVACagent \n<b>Organization : </b>\nCTTC \n<b>Contact : </b>\nricard(dot)vilalta(at)cttc(dot)es \n<b>Revision : </b> 2016-06-17 \n
+package "HVACagent:HVACagent" as HVACagent_HVACagent { 
+class "HVACagent" as HVACagent << (M, #33CCFF) module>> 
+enum "Status" as HVACagent_I_Status {
+Stopped
+Running
+Error
+}
+class "Temperature" as HVACagent_I_Temperature_grouping <<(G,Lime) grouping>> 
+HVACagent_I_Temperature_grouping : TempCentigrads : int32  
+class "Heat" as HVACagent_I_Heat_grouping <<(G,Lime) grouping>> 
+HVACagent_I_Heat_grouping : Status : Status  
+class "Ac" as HVACagent_I_Ac_grouping <<(G,Lime) grouping>> 
+HVACagent_I_Ac_grouping : Status : Status  
+class "HVAC" as HVACagent_I_HVAC_grouping <<(G,Lime) grouping>> 
+class "Temperature" as  HVACagent_I_HVAC_I_Temperature <<container>> 
+HVACagent_I_HVAC_grouping *-- "1" HVACagent_I_HVAC_I_Temperature 
+note bottom of HVACagent_I_HVAC_I_Temperature
+<b>Config = </b>false
+end note 
+HVACagent_I_HVAC_I_Temperature : Temperature {uses} 
+class "Heat" as  HVACagent_I_HVAC_I_Heat <<container>> 
+HVACagent_I_HVAC_grouping *-- "1" HVACagent_I_HVAC_I_Heat 
+HVACagent_I_HVAC_I_Heat : Heat {uses} 
+class "Ac" as  HVACagent_I_HVAC_I_Ac <<container>> 
+HVACagent_I_HVAC_grouping *-- "1" HVACagent_I_HVAC_I_Ac 
+HVACagent_I_HVAC_I_Ac : Ac {uses} 
+class "HVAC" as  HVACagent_I_HVAC <<container>> 
+HVACagent *-- "1" HVACagent_I_HVAC 
+HVACagent_I_HVAC : HVAC {uses} 
+} 
+
+HVACagent_I_HVAC_I_Temperature --> HVACagent_I_Temperature_grouping : uses 
+HVACagent_I_HVAC_I_Heat --> HVACagent_I_Heat_grouping : uses 
+HVACagent_I_HVAC_I_Ac --> HVACagent_I_Ac_grouping : uses 
+HVACagent_I_HVAC --> HVACagent_I_HVAC_grouping : uses 
+center footer
+ <size:20> UML Generated : 2017-05-23 10:28 </size>
+ endfooter 
+@enduml 

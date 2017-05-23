@@ -1,0 +1,399 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "HVACagent API generated from HVACagent.yang",
+        "title": "HVACagent API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/config/HVAC/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: HVAC",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "HVACbody object",
+                        "schema": {
+                            "$ref": "#/definitions/HVAC"
+                        },
+                        "name": "HVAC",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update HVAC by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_HVAC_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: HVAC",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "HVACbody object",
+                        "schema": {
+                            "$ref": "#/definitions/HVAC"
+                        },
+                        "name": "HVAC",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create HVAC by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_HVAC_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: HVAC",
+                "summary": "Delete HVAC by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_HVAC_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/HVAC"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: HVAC",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve HVAC",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_HVAC"
+            }
+        },
+        "/config/HVAC/Temperature/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Temperature"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: Temperature",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve Temperature",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_HVAC_Temperature_Temperature"
+            }
+        },
+        "/config/HVAC/Heat/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: Heat",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "Heatbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Heat"
+                        },
+                        "name": "Heat",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update Heat by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_HVAC_Heat_Heat_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: Heat",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "Heatbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Heat"
+                        },
+                        "name": "Heat",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Heat by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_HVAC_Heat_Heat_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: Heat",
+                "summary": "Delete Heat by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_HVAC_Heat_Heat_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Heat"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: Heat",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve Heat",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_HVAC_Heat_Heat"
+            }
+        },
+        "/config/HVAC/Ac/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: Ac",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "Acbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Ac"
+                        },
+                        "name": "Ac",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update Ac by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "update_HVAC_Ac_Ac_by_id"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: Ac",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "Acbody object",
+                        "schema": {
+                            "$ref": "#/definitions/Ac"
+                        },
+                        "name": "Ac",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create Ac by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "create_HVAC_Ac_Ac_by_id"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: Ac",
+                "summary": "Delete Ac by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "delete_HVAC_Ac_Ac_by_id"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Ac"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: Ac",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve Ac",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieve_HVAC_Ac_Ac"
+            }
+        }
+    },
+    "definitions": {
+        "Ac": {
+            "properties": {
+                "Status": {
+                    "enum": [
+                        "Stopped",
+                        "Running",
+                        "Error"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "Heat": {
+            "properties": {
+                "Status": {
+                    "enum": [
+                        "Stopped",
+                        "Running",
+                        "Error"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "Temperature": {
+            "properties": {
+                "TempCentigrads": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "HVAC": {
+            "properties": {
+                "Ac": {
+                    "$ref": "#/definitions/Ac"
+                },
+                "Heat": {
+                    "$ref": "#/definitions/Heat"
+                },
+                "Temperature": {
+                    "$ref": "#/definitions/Temperature"
+                }
+            }
+        }
+    }
+}
