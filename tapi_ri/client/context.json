@@ -1,0 +1,13 @@
+{
+  "service-interface-point" : [{"uuid":"sip1"}, {"uuid":"sip2"}],
+  "topology" : [
+    {
+      "uuid" : "top0",
+      "name" : [{"value-name":"topo0","value":"0"}],
+      "node" : [ { "uuid":"node0" },{ "uuid":"node1" }],
+      "link" : [ { "uuid":"link0" } ]
+    }
+  ],
+  "connection" : [ {} ],
+  "connectivity-service" : [ {} ]
+}

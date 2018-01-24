@@ -1,9 +1,15 @@
+import logging
+import database.database as database
 
 def create_context_by_id(context) -> str:
-    return 'do some magic!'
+    logging.info("create_context_by_id %s", context)
+    database.context=context
+    return context
 
 def create_context_connectivity_service_connectivity_service_by_id(uuid, connectivityService) -> str:
-    return 'do some magic!'
+    logging.info("create_context_connectivity_service_connectivity_service_by_id %s %s", uuid, connectivityService)
+    database.context[connectivity-service].append(connectivityService)
+    return connectivityService
 
 def create_context_connectivity_service_end_point_capacity_capacity_by_id(uuid, localId, capacity) -> str:
     return 'do some magic!'
@@ -144,13 +150,18 @@ def delete_context_service_interface_point_service_interface_point_by_id(uuid) -
     return 'do some magic!'
 
 def retrieve_context() -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context")
+    return database.context
 
 def retrieve_context_connection_connection() -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_connection_connection")
+    return database.context['connection']
 
 def retrieve_context_connection_connection_by_id(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_connection_connection_by_id %s", uuid)
+    for item in  database.context['connection']:
+      if item['uuid'] == uuid:
+        return item
 
 def retrieve_context_connection_name_name(uuid) -> str:
     return 'do some magic!'
@@ -198,10 +209,14 @@ def retrieve_context_connection_switch_control_switch_switch_by_id(uuid, localId
     return 'do some magic!'
 
 def retrieve_context_connectivity_service_connectivity_service() -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_connectivity_service_connectivity_service")
+    return database.context['connectivity-service']
 
 def retrieve_context_connectivity_service_connectivity_service_by_id(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_connectivity_service_connectivity_service_by_id %s", uuid)
+    for item in  database.context['connectivity-service']:
+      if item['uuid'] == uuid:
+        return item
 
 def retrieve_context_connectivity_service_cost_characteristic_cost_characteristic(uuid) -> str:
     return 'do some magic!'
@@ -486,10 +501,14 @@ def retrieve_context_service_interface_point_name_name_by_id(uuid, valueName) ->
     return 'do some magic!'
 
 def retrieve_context_service_interface_point_service_interface_point() -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_service_interface_point_service_interface_point")
+    return database.context['service-interface-point']
 
 def retrieve_context_service_interface_point_service_interface_point_by_id(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_service_interface_point_service_interface_point_by_id %s", uuid)
+    for item in  database.context['service-interface-point']:
+      if item['uuid'] == uuid:
+        return item
 
 def retrieve_context_service_interface_point_total_potential_capacity_bandwidth_profile_bandwidth_profile(uuid) -> str:
     return 'do some magic!'
@@ -546,10 +565,18 @@ def retrieve_context_topology_link_latency_characteristic_latency_characteristic
     return 'do some magic!'
 
 def retrieve_context_topology_link_link(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_topology_link_link %s", uuid)
+    for item in  database.context['topology']:
+      if item['uuid'] == uuid:
+        return item['link']
 
-def retrieve_context_topology_link_link_by_id(uuid, linkUuid) -> str:
-    return 'do some magic!'
+def retrieve_context_topology_link_link_by_id(uuid, link_uuid) -> str:
+    logging.info("retrieve_context_topology_link_link_by_id %s $s", uuid, link_uuid)
+    for item in  database.context['topology']:
+      if item['uuid'] == uuid:
+        for link in item['link']:
+          if link['uuid'] == link_uuid:
+            return link
 
 def retrieve_context_topology_link_name_name(uuid, linkUuid) -> str:
     return 'do some magic!'
@@ -639,10 +666,18 @@ def retrieve_context_topology_node_name_name_by_id(uuid, nodeUuid, valueName) ->
     return 'do some magic!'
 
 def retrieve_context_topology_node_node(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_topology_node_node %s", uuid)
+    for item in  database.context['topology']:
+      if item['uuid'] == uuid:
+        return item['node']
 
-def retrieve_context_topology_node_node_by_id(uuid, nodeUuid) -> str:
-    return 'do some magic!'
+def retrieve_context_topology_node_node_by_id(uuid, node_uuid) -> str:
+    logging.info("retrieve_context_topology_node_node_by_id %s $s", uuid, node_uuid)
+    for item in  database.context['topology']:
+      if item['uuid'] == uuid:
+        for node in item['node']:
+          if node['uuid'] == node_uuid:
+            return node
 
 def retrieve_context_topology_node_node_rule_group_available_capacity_available_capacity(uuid, nodeUuid, nodeRuleGroupUuid) -> str:
     return 'do some magic!'
@@ -858,10 +893,14 @@ def retrieve_context_topology_node_total_potential_capacity_total_size_total_siz
     return 'do some magic!'
 
 def retrieve_context_topology_topology() -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_topology_topology")
+    return database.context['topology']
 
 def retrieve_context_topology_topology_by_id(uuid) -> str:
-    return 'do some magic!'
+    logging.info("retrieve_context_topology_topology_by_id %s", uuid)
+    for item in  database.context['topology']:
+      if item['uuid'] == uuid:
+        return item
 
 def update_context_by_id(context) -> str:
     return 'do some magic!'
