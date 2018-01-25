@@ -1,0 +1,51 @@
+{
+  "service-interface-point" : [
+    {"uuid":"sip1"}, 
+    {"uuid":"sip2"}
+  ],
+  "topology" : [
+    {
+      "uuid" : "top0",
+      "name" : [{"value-name":"topo0","value":"0"}],
+      "node" : [ 
+        { 
+          "uuid":"node0",
+          "owned-node-edge-point" : [
+            { "uuid" : "nep00" },
+            { "uuid" : "nep01" }
+          ]
+        },
+        { 
+          "uuid":"node1",
+          "owned-node-edge-point" : [
+            { "uuid" : "nep10", "mapped-service-interface-point" : [ "restconf/config/context/service-interface-point/sip1" ] }
+          ]
+        }, 
+        { 
+          "uuid":"node2" ,
+          "owned-node-edge-point" : [
+            { "uuid" : "nep20", "mapped-service-interface-point" : [ "restconf/config/context/service-interface-point/sip2" ] }
+          ]
+        }
+      ],
+      "link" : [ 
+        { 
+          "uuid":"link0",
+          "node-edge-point" : [
+            "restconf/config/context/topology/top0/node/node1/owned-node-edge-point/nep10",
+            "restconf/config/context/topology/top0/node/node0/owned-node-edge-point/nep00"
+          ] 
+        },
+        { 
+          "uuid":"link1",
+          "node-edge-point" : [
+            "restconf/config/context/topology/top0/node/node0/owned-node-edge-point/nep01",
+            "restconf/config/context/topology/top0/node/node2/owned-node-edge-point/nep20"
+          ] 
+        }
+      ]
+    }
+  ],
+  "connection" : [ {} ],
+  "connectivity-service" : [ {} ]
+}
