@@ -2,4 +2,9 @@
 
 import logging
 
-context = { }
+context = { 
+  "service-interface-point" : [ ],
+  "topology" : [ ],
+  "connection" : [ ],
+  "connectivity-service" : [  ]
+}

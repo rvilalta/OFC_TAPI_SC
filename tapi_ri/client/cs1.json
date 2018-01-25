@@ -1,0 +1,11 @@
+{ 
+  "uuid" : "cs1",
+  "service-type":"POINT_TO_POINT_CONNECTIVITY", 
+  "requested-capacity": {
+    "total-size" : { "value" : "1", "unit" : "GBPS" }
+  },
+  "end-point":[ 
+    { "local-id":"sp1", "layer-protocol-name":"OCH" , "direction":"BIDIRECTIONAL", "role":"SYMMETRIC", "service-interface-point":"restconf/config/context/service-interface-point/sip0"}, 
+    { "local-id":"sp2", "layer-protocol-name":"OCH" , "direction":"BIDIRECTIONAL", "role":"SYMMETRIC", "service-interface-point":"restconf/config/context/service-interface-point/sip1"} 
+  ] 
+}

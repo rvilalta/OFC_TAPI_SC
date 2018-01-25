@@ -26,17 +26,17 @@ curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/c
 curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/service-interface-point/sip1/
 curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/service-interface-point/sip2/
 
-#Create Connectivity Service #connected with ONOS
-curl -X POST -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/ -d'{ "_connConstraint":{"serviceType":"POINT_TO_POINT_CONNECTIVITY", "serviceLayer":["OCH"] }, "_servicePort":[ { "localId":"sp1", "serviceLayer":"OCH" , "direction":"BIDIRECTIONAL", "role":"SYMMETRIC", "_serviceEndPoint":"http://127.0.0.1:8080/restconf/config/Context/_serviceEndPoint/of:0000000000000001"}, { "localId":"sp2", "serviceLayer":"OCH" , "direction":"BIDIRECTIONAL", "role":"SYMMETRIC", "_serviceEndPoint":"http://127.0.0.1:8080/restconf/config/Context/_serviceEndPoint/of:0000000000000003"} ] }'
+#Create Connectivity Service
+curl -X POST -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/cs1/ -d @cs1.json
 
 #Get Connectivity Services
 curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/
 
 curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/cs1/
 
-curl -X DELETE -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/186/
-
+#Delete Connectivity Services
 curl -X DELETE -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/cs1/
 
-
+#Get connection
+curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connection/
 
