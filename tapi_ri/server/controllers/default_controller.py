@@ -2,9 +2,13 @@ import logging
 import database.database as database
 
 def create_context_by_id(context) -> str:
+    if database.context:
+        raise Exception ("TAPI Context cannot be created/deleted since it is the root presence-container for all client-server interaction")
     logging.info("create_context_by_id %s", context)
     database.context=context
     return context
+
+    
 
 def create_context_connectivity_service_connectivity_service_by_id(uuid, connectivityService) -> str:
     logging.info("create_context_connectivity_service_connectivity_service_by_id %s %s", uuid, connectivityService)
@@ -92,6 +96,8 @@ def create_update_connectivity_service_by_id(updateConnectivityService) -> str:
     return 'do some magic!'
 
 def delete_context_by_id() -> str:
+    if database.context:
+        raise Exception ("TAPI Context cannot be created/deleted since it is the root presence-container for all client-server interaction")
     return 'do some magic!'
 
 def delete_context_connectivity_service_connectivity_service_by_id(uuid) -> str:
