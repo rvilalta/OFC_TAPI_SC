@@ -248,7 +248,7 @@
 			"node": 
 			[
 				{
-					"uuid": "node-pe1-mul",
+					"uuid": "node-mul-pe-1",
 					"name": 
 					[
 						{
@@ -266,18 +266,19 @@
 					"administrative-state": "UNLOCKED",
 					"operational-state": "ENABLED",
 					"lifecycle-state": "INSTALLED",
-					"encap-topology": "/context/topology/topo-pe1",
+					"encap-topology": "/restconf/config/context/topology/topo-pe1",
+					"owned-node-edge-point": [],
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-uni1",
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-uni2",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni1",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni2"
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-uni1",
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-uni2",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni2"
 					]
 				},
 
 				{
-					"uuid": "node-pe2-mul",
+					"uuid": "node-mul-pe-2",
 					"name": 
 					[
 						{
@@ -295,18 +296,19 @@
 					"administrative-state": "UNLOCKED",
 					"operational-state": "ENABLED",
 					"lifecycle-state": "INSTALLED",
-					"encap-topology": "/context/topology/topo-pe2",
+					"encap-topology": "/restconf/config/context/topology/topo-pe2",
+					"owned-node-edge-point": [],
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-uni1",
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-uni2",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni1",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni2"
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-uni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-uni2",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni2"
 					]
 				},
 
 				{
-					"uuid": "node-pe3-mul",
+					"uuid": "node-mul-pe-3",
 					"name": 
 					[
 						{
@@ -324,19 +326,20 @@
 					"administrative-state": "UNLOCKED",
 					"operational-state": "ENABLED",
 					"lifecycle-state": "INSTALLED",
-					"encap-topology": "/context/topology/topo-pe3",
+					"encap-topology": "/restconf/config/context/topology/topo-pe3",
+					"owned-node-edge-point": [],
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe3/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-uni1",
-						"/context/topology/topo-pe2/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-uni2",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni1",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni2",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni3"
+						"/restconf/config/context/topology/topo-pe3/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-uni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-uni2",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni2",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni3"
 					]
 				},
 
 				{
-					"uuid": "node-pi4-odu",
+					"uuid": "node-odu-pi-4",
 					"name": 
 					[
 						{
@@ -355,9 +358,9 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni1",
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni2",
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni3"
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni1",
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni2",
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni3"
 					],
 
 					"owned-node-edge-point": 
@@ -485,8 +488,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni1",
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni2"
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni1",
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni2"
 					]
 				},
 
@@ -548,8 +551,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni2",
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni1"
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni2",
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni1"
 					]
 				},
 
@@ -611,8 +614,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni3",
-						"/context/topology/topo-nwk/node/node-pi4-odu/owned-node-edge-point/nep-pi4-odu4-nni3"
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni3",
+						"/restconf/config/context/topology/topo-nwk/node/node-odu-pi-4/owned-node-edge-point/nep-pi4-odu4-nni3"
 					]
 				},
 
@@ -674,8 +677,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni2",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni1"
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni2",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni1"
 					]
 				},
 
@@ -737,8 +740,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni1",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni2"
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni2"
 					]
 				},
 
@@ -800,8 +803,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-odu2-clt1",
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-odu2-clt1"
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-odu2-clt1",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-odu2-clt1"
 					]
 				}
 			]
@@ -820,7 +823,7 @@
 			"node": 
 			[
 				{
-					"uuid": "node-pe1-eth",
+					"uuid": "node-eth-pe-1",
 					"name": 
 					[
 						{
@@ -839,10 +842,10 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-uni1",
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-uni2",
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-pool",
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-odu2-clt1"
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-uni1",
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-uni2",
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-pool",
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-odu2-clt1"
 					],
 
 					"owned-node-edge-point": 
@@ -867,7 +870,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe1-uni1"
+								"/restconf/config/context/service-interface-point/sip-pe1-uni1"
 							]
 						},
 
@@ -891,7 +894,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe1-uni2"
+								"/restconf/config/context/service-interface-point/sip-pe1-uni2"
 							]
 						},
 
@@ -915,7 +918,7 @@
 							"link-port-role": "SYMMETRIC",
 							"aggregated-node-edge-point": 
 							[
-								"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-odu2-clt1"
+								"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-odu2-clt1"
 							]
 						},
 
@@ -942,7 +945,7 @@
 				},
 
 				{
-					"uuid": "node-pe1-odu",
+					"uuid": "node-odu-pe-1",
 					"name": 
 					[
 						{
@@ -961,10 +964,10 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni1",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu4-nni2",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu2-nni1",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu2-pool"
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu4-nni2",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu2-nni1",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu2-pool"
 					],
 
 					"owned-node-edge-point": 
@@ -1113,8 +1116,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe1/node/node-pe1-eth/owned-node-edge-point/nep-pe1-eth-pool",
-						"/context/topology/topo-pe1/node/node-pe1-odu/owned-node-edge-point/nep-pe1-odu2-pool"
+						"/restconf/config/context/topology/topo-pe1/node/node-eth-pe-1/owned-node-edge-point/nep-pe1-eth-pool",
+						"/restconf/config/context/topology/topo-pe1/node/node-odu-pe-1/owned-node-edge-point/nep-pe1-odu2-pool"
 					]
 				}
 			]
@@ -1133,7 +1136,7 @@
 			"node": 
 			[
 				{
-					"uuid": "node-pe2-eth",
+					"uuid": "node-eth-pe-2",
 					"name": 
 					[
 						{
@@ -1152,10 +1155,10 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-uni1",
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-uni2",
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-pool",
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-odu2-clt1"
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-uni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-uni2",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-pool",
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-odu2-clt1"
 					],
 
 					"owned-node-edge-point": 
@@ -1180,7 +1183,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe2-uni1"
+								"/restconf/config/context/service-interface-point/sip-pe2-uni1"
 							]
 						},
 
@@ -1204,7 +1207,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe2-uni2"
+								"/restconf/config/context/service-interface-point/sip-pe2-uni2"
 							]
 						},
 
@@ -1228,7 +1231,7 @@
 							"link-port-role": "SYMMETRIC",
 							"aggregated-node-edge-point": 
 							[
-								"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-odu2-clt1"
+								"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-odu2-clt1"
 							]
 						},
 
@@ -1255,7 +1258,7 @@
 				},
 
 				{
-					"uuid": "node-pe2-odu",
+					"uuid": "node-odu-pe-2",
 					"name": 
 					[
 						{
@@ -1274,10 +1277,10 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni1",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu4-nni2",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu2-nni1",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu2-pool"
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu4-nni2",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu2-nni1",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu2-pool"
 					],
 
 					"owned-node-edge-point": 
@@ -1426,8 +1429,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe2/node/node-pe2-eth/owned-node-edge-point/nep-pe2-eth-pool",
-						"/context/topology/topo-pe2/node/node-pe2-odu/owned-node-edge-point/nep-pe2-odu2-pool"
+						"/restconf/config/context/topology/topo-pe2/node/node-eth-pe-2/owned-node-edge-point/nep-pe2-eth-pool",
+						"/restconf/config/context/topology/topo-pe2/node/node-odu-pe-2/owned-node-edge-point/nep-pe2-odu2-pool"
 					]
 				}
 			]
@@ -1446,7 +1449,7 @@
 			"node": 
 			[
 				{
-					"uuid": "node-pe3-eth",
+					"uuid": "node-eth-pe-3",
 					"name": 
 					[
 						{
@@ -1465,9 +1468,9 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe3/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-uni1",
-						"/context/topology/topo-pe3/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-uni2",
-						"/context/topology/topo-pe3/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-pool"
+						"/restconf/config/context/topology/topo-pe3/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-uni1",
+						"/restconf/config/context/topology/topo-pe3/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-uni2",
+						"/restconf/config/context/topology/topo-pe3/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-pool"
 					],
 
 					"owned-node-edge-point": 
@@ -1492,7 +1495,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe3-uni1"
+								"/restconf/config/context/service-interface-point/sip-pe3-uni1"
 							]
 						},
 
@@ -1516,7 +1519,7 @@
 							"link-port-role": "SYMMETRIC",
 							"mapped-service-interface-point": 
 							[
-								"/context/service-interface-point/sip-pe3-uni2"
+								"/restconf/config/context/service-interface-point/sip-pe3-uni2"
 							]
 						},
 
@@ -1547,7 +1550,7 @@
 				},
 
 				{
-					"uuid": "node-pe3-odu",
+					"uuid": "node-odu-pe-3",
 					"name": 
 					[
 						{
@@ -1566,9 +1569,9 @@
 					"lifecycle-state": "INSTALLED",
 					"aggregated-node-edge-point": 
 					[
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni1",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu4-nni2",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu2-pool"
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni1",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu4-nni2",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu2-pool"
 					],
 
 					"owned-node-edge-point": 
@@ -1697,8 +1700,8 @@
 
 					"node-edge-point": 
 					[
-						"/context/topology/topo-pe3/node/node-pe3-eth/owned-node-edge-point/nep-pe3-eth-pool",
-						"/context/topology/topo-pe3/node/node-pe3-odu/owned-node-edge-point/nep-pe3-odu2-pool"
+						"/restconf/config/context/topology/topo-pe3/node/node-eth-pe-3/owned-node-edge-point/nep-pe3-eth-pool",
+						"/restconf/config/context/topology/topo-pe3/node/node-odu-pe-3/owned-node-edge-point/nep-pe3-odu2-pool"
 					]
 				}
 			]
