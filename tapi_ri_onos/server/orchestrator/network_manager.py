@@ -22,17 +22,13 @@ class network_manager():
 
     def load_onos_topology(self, ctl_address, ctl_port, ctl_user, ctl_password):
         logging.info("load_onos_topology %s %s %s %s", ctl_address, ctl_port, ctl_user, ctl_password)
-
         node_array = []
         link_array = []
-
         #nodes
         http_json = 'http://' + ctl_address + ':' + ctl_port + '/onos/v1/devices'
         response = requests.get(http_json, auth=HTTPBasicAuth(ctl_user, ctl_password))
         onos_nodes = response.json()
-
-        logging.info("Retrieved onos nodes:\n%s", json.dumps(onos_nodes, indent=4, sort_keys=True) )
-        
+        logging.info("Retrieved onos nodes:\n%s", json.dumps(onos_nodes, indent=4, sort_keys=True) )   
         for node in onos_nodes["devices"]:
         
             node_edge_point = []
@@ -59,14 +55,13 @@ class network_manager():
         response = requests.get(http_json, auth=HTTPBasicAuth(ctl_user, ctl_password))
         onos_links = response.json()
         logging.info("Retrieved onos links:\n%s", json.dumps(onos_links, indent=4, sort_keys=True) )
-
         for link in onos_links['links']:
             link_json = {}
             link_id= "link" + self.getNodeId(link['src']['device'])+ self.getNodeId(link['dst']['device'])
             link_json['uuid'] = link_id
             link_json['node-edge-point'] = []
-            nep_src = "restconf/config/context/topology/top0/node/node" + self.getNodeId(link['src']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['src']['device']) + link['src']['port'] + "/"
-            nep_dst = "restconf/config/context/topology/top0/node/node" + self.getNodeId(link['dst']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['dst']['device']) + link['dst']['port'] + "/"
+            nep_src = "/restconf/config/context/topology/top0/node/node" + self.getNodeId(link['src']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['src']['device']) + link['src']['port'] + "/"
+            nep_dst = "/restconf/config/context/topology/top0/node/node" + self.getNodeId(link['dst']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['dst']['device']) + link['dst']['port'] + "/"
             link_json['node-edge-point'].append(nep_src)
             link_json['node-edge-point'].append(nep_dst)    
             link_array.append( link_json )
@@ -78,8 +73,6 @@ class network_manager():
         topo['name'] = [{"value-name":"topo0","value":"0"}]
         topo['node'] = node_array     
         topo['link'] = link_array
-        
-        
         logging.debug("Topo: %s", topo)                  
         return topo
 

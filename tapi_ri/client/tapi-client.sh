@@ -1,5 +1,4 @@
-#Set Context
-curl -X POST -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/ -d @context.json
+#Example CURL for TAPI 2.0
 
 #Get Context
 curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/ 
@@ -38,5 +37,5 @@ curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/c
 curl -X DELETE -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connectivity-service/cs1/
 
 #Get connection
-curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connection/
+curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/restconf/config/context/connection/cs1/
 

@@ -16,7 +16,7 @@ def create_context_connectivity_service_connectivity_service_by_id(uuid, connect
       "uuid" : uuid
     }
     database.context['connection'].append(connection)
-    connectivityService['connection'] = [ "/restconf/config/connection/" + uuid  ]+"/"
+    connectivityService['connection'] =  [ "/restconf/config/connection/" + uuid +"/" ]
     database.context['connectivity-service'].append(connectivityService)
     return connectivityService
 

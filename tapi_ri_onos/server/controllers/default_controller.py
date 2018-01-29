@@ -2,6 +2,8 @@ import logging
 import database.database as database
 
 def create_context_by_id(context) -> str:
+    if database.context:
+      raise Exception ("TAPI Context cannot be created/deleted since it is the root presence-container for all client-server interaction")
     logging.info("create_context_by_id %s", context)
     database.context=context
     return context
@@ -12,7 +14,7 @@ def create_context_connectivity_service_connectivity_service_by_id(uuid, connect
       "uuid" : uuid
     }
     database.context['connection'].append(connection)
-    connectivityService['connection'] = [ "restconf/config/connection/" + uuid + "/" ]
+    connectivityService['connection'] = [ "/restconf/config/connection/" + uuid + "/" ]
     database.context['connectivity-service'].append(connectivityService)
     return connectivityService
 
@@ -92,6 +94,8 @@ def create_update_connectivity_service_by_id(updateConnectivityService) -> str:
     return 'do some magic!'
 
 def delete_context_by_id() -> str:
+    if database.context:
+      raise Exception ("TAPI Context cannot be created/deleted since it is the root presence-container for all client-server interaction")
     return 'do some magic!'
 
 def delete_context_connectivity_service_connectivity_service_by_id(uuid) -> str:
@@ -169,10 +173,10 @@ def retrieve_context_connection_connection() -> str:
     logging.info("retrieve_context_connection_connection")
     array_cs=[]
     for connection in database.context['connection']:
-      uri="restconf/config/context/connection/"+connection["uuid"]+"/"
+      uri="/restconf/config/context/connection/"+connection["uuid"]+"/"
       array_cs.append(uri)
-    json = { 'itemlist' : array_cs }
-    return json
+    #json = { 'itemlist' : array_cs }
+    return array_cs
 
 def retrieve_context_connection_connection_by_id(uuid) -> str:
     logging.info("retrieve_context_connection_connection_by_id %s", uuid)
@@ -229,10 +233,10 @@ def retrieve_context_connectivity_service_connectivity_service() -> str:
     logging.info("retrieve_context_connectivity_service_connectivity_service")
     array_cs=[]
     for cs in database.context['connectivity-service']:
-      uri="restconf/config/context/connectivity-service/"+cs["uuid"]+"/"
+      uri="/restconf/config/context/connectivity-service/"+cs["uuid"]+"/"
       array_cs.append(uri)
-    json = { 'itemlist' : array_cs }
-    return json
+    #json = { 'itemlist' : array_cs }
+    return array_cs
 
 def retrieve_context_connectivity_service_connectivity_service_by_id(uuid) -> str:
     logging.info("retrieve_context_connectivity_service_connectivity_service_by_id %s", uuid)
@@ -526,10 +530,10 @@ def retrieve_context_service_interface_point_service_interface_point() -> str:
     logging.info("retrieve_context_service_interface_point_service_interface_point")
     array_cs=[]
     for sip in database.context['service-interface-point']:
-      uri="restconf/config/context/service-interface-point/"+sip["uuid"]+"/"
+      uri="/restconf/config/context/service-interface-point/"+sip["uuid"]+"/"
       array_cs.append(uri)
-    json = { 'itemlist' : array_cs }
-    return json
+    #json = { 'itemlist' : array_cs }
+    return array_cs
 
 def retrieve_context_service_interface_point_service_interface_point_by_id(uuid) -> str:
     logging.info("retrieve_context_service_interface_point_service_interface_point_by_id %s", uuid)
@@ -597,10 +601,10 @@ def retrieve_context_topology_link_link(uuid) -> str:
       if item['uuid'] == uuid:
         array_cs=[]
         for link in item['link']:
-          uri="restconf/config/context/topology/"+uuid+"/link/"+link["uuid"]+"/"
+          uri="/restconf/config/context/topology/"+uuid+"/link/"+link["uuid"]+"/"
           array_cs.append(uri)
-        json = { 'itemlist' : array_cs }
-        return json
+        #json = { 'itemlist' : array_cs }
+        return array_cs
 
 
 def retrieve_context_topology_link_link_by_id(uuid, link_uuid) -> str:
@@ -704,10 +708,10 @@ def retrieve_context_topology_node_node(uuid) -> str:
       if item['uuid'] == uuid:
         array_cs=[]
         for node in item['node']:
-          uri="restconf/config/context/topology/"+uuid+"/node/"+node["uuid"]+"/"
+          uri="/restconf/config/context/topology/"+uuid+"/node/"+node["uuid"]+"/"
           array_cs.append(uri)
-        json = { 'itemlist' : array_cs }
-        return json
+        #json = { 'itemlist' : array_cs }
+        return array_cs
 
 def retrieve_context_topology_node_node_by_id(uuid, node_uuid) -> str:
     logging.info("retrieve_context_topology_node_node_by_id %s $s", uuid, node_uuid)
@@ -934,10 +938,10 @@ def retrieve_context_topology_topology() -> str:
     logging.info("retrieve_context_topology_topology")
     array_cs=[]
     for top in database.context['topology']:
-      uri="restconf/config/context/topology/"+top["uuid"]+"/"
+      uri="/restconf/config/context/topology/"+top["uuid"]+"/"
       array_cs.append(uri)
-    json = { 'itemlist' : array_cs }
-    return json
+    #json = { 'itemlist' : array_cs }
+    return array_cs
 
 def retrieve_context_topology_topology_by_id(uuid) -> str:
     logging.info("retrieve_context_topology_topology_by_id %s", uuid)
