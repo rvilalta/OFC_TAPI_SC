@@ -10,12 +10,15 @@ def create_context_by_id(context) -> str:
 
 def create_context_connectivity_service_connectivity_service_by_id(uuid, connectivityService) -> str:
     logging.info("create_context_connectivity_service_connectivity_service_by_id %s %s", uuid, connectivityService)
-    connection = {
-      "uuid" : uuid
-    }
-    database.context['connection'].append(connection)
-    connectivityService['connection'] = [ "/restconf/config/connection/" + uuid + "/" ]
-    database.context['connectivity-service'].append(connectivityService)
+    if database.ONOS==0:
+      connection = {
+        "uuid" : uuid
+      }
+      database.context['connection'].append(connection)
+      connectivityService['connection'] = [ "/restconf/config/connection/" + uuid + "/" ]
+      database.context['connectivity-service'].append(connectivityService)
+    else:
+      connectivityService = database.orch_instance.create_connectivity_service(uuid, connectivityService)
     return connectivityService
 
 def create_context_connectivity_service_end_point_capacity_capacity_by_id(uuid, localId, capacity) -> str:
@@ -99,14 +102,18 @@ def delete_context_by_id() -> str:
     return 'do some magic!'
 
 def delete_context_connectivity_service_connectivity_service_by_id(uuid) -> str:
-    for connection in database.context['connection']:
-        if connection['uuid'] == uuid :
-            database.context['connection'].remove(connection)
-    for cs in database.context['connectivity-service']:
-        if cs['uuid'] == uuid :
-            database.context['connectivity-service'].remove(cs)
-            return "done"
-    return error, 404
+    if database.ONOS==0:
+      for connection in database.context['connection']:
+          if connection['uuid'] == uuid :
+              database.context['connection'].remove(connection)
+      for cs in database.context['connectivity-service']:
+          if cs['uuid'] == uuid :
+              database.context['connectivity-service'].remove(cs)
+              return "done", 404
+    else:
+      database.orch_instance.delete_connectivity_service(uuid)
+      return "done", 404
+    return 'error', 404
 
 def delete_context_connectivity_service_end_point_capacity_capacity_by_id(uuid, localId) -> str:
     return 'do some magic!'

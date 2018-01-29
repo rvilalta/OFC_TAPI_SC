@@ -15,15 +15,15 @@ class network_manager():
         
     def load_topology(self):
 
-        topo=self.load_onos_topology( self.ctl_address, self.ctl_port, self.ctl_user, self.ctl_password)
-        if topo != None:
-          logging.info('Loaded topo:\n%s', topo)
-          database.context['topology'].append(topo)
+        self.load_onos_topology( self.ctl_address, self.ctl_port, self.ctl_user, self.ctl_password)
+        
 
     def load_onos_topology(self, ctl_address, ctl_port, ctl_user, ctl_password):
         logging.info("load_onos_topology %s %s %s %s", ctl_address, ctl_port, ctl_user, ctl_password)
         node_array = []
         link_array = []
+        sip_array  = []
+        
         #nodes
         http_json = 'http://' + ctl_address + ':' + ctl_port + '/onos/v1/devices'
         response = requests.get(http_json, auth=HTTPBasicAuth(ctl_user, ctl_password))
@@ -41,14 +41,22 @@ class network_manager():
                 if port["isEnabled"] == True :
                     
                     nep = collections.OrderedDict()
-                    nep['uuid'] = "nep" + self.getNodeId(node['id']) + port["port"] 
+                    nep['uuid'] = "nep" + self.getNodeId(node['id']) + port["port"]
+                    nep['mapped-service-interface-point'] = [ "/restconf/config/context/service-interface-point/sip" +  self.getNodeId(node['id']) + port["port"] + "/" ] 
                     node_edge_point.append( nep )
-            
+                    
+                    #also including all nep as sip
+                    sip = collections.OrderedDict()
+                    sip['uuid'] = "sip" + self.getNodeId(node['id']) + port["port"] 
+                    sip_array.append( sip )
+                    
             node_json = collections.OrderedDict()
             node_json['uuid'] = "node" + self.getNodeId(node['id'])            
             node_json['owned-node-edge-point'] = node_edge_point
             
             node_array.append( node_json )
+        
+
             
         #links
         http_json = 'http://' + ctl_address + ':' + ctl_port + '/onos/v1/links'
@@ -73,25 +81,29 @@ class network_manager():
         topo['name'] = [{"value-name":"topo0","value":"0"}]
         topo['node'] = node_array     
         topo['link'] = link_array
+        
         logging.debug("Topo: %s", topo)                  
-        return topo
+        if topo != None:
+          logging.info('Loaded topo:\n%s', topo)
+          database.context['topology'].append(topo)
+          database.context['service-interface-point'] = sip_array
 
 
-    def insertFlow( self, nodeId, priority, inport, outport ):
+    def insertFlow( self, cs_uuid, nodeId, inport, outport ):
 
-        flow='{ "priority": '+priority+', "timeout": 0, "isPermanent": true, "deviceId": "'+nodeId+'", "treatment": { "instructions": [ { "type": "OUTPUT", "port": "'+outport+'" } ] }, "selector": { "criteria": [ { "type": "IN_PORT", "port": "'+inport+'" } ] } }'
+        flow='{ "priority": 1000, "timeout": 0, "isPermanent": true, "deviceId": "'+nodeId+'", "treatment": { "instructions": [ { "type": "OUTPUT", "port": "'+outport+'" } ] }, "selector": { "criteria": [ { "type": "IN_PORT", "port": "'+inport+'" } ] } }'
 
-        url = 'http://' + self.ctl_address + ':' + self.ctl_port + '/onos/v1/flows/' + nodeId + '?appId=tuto' 
+        url = 'http://' + self.ctl_address + ':' + self.ctl_port + '/onos/v1/flows/' + nodeId + '?appId=' + cs_uuid 
         headers = {'content-type': 'application/json'}
         response = requests.post(url, data=flow,
 	                        headers=headers, auth=HTTPBasicAuth(self.ctl_user, self.ctl_password))
 	                        
         return { 'status':response.status_code, 'content': response.content}
 
-    def removeFlow(self, nodeId, flow_id):
-        url = 'http://' + self.ctl_address + ':' + self.ctl_port + '/onos/v1/flows/application/tuto'
+    def removeFlows(self, cs_uuid):
+        url = 'http://' + self.ctl_address + ':' + self.ctl_port + '/onos/v1/flows/application/'+cs_uuid
         response = requests.delete(url, auth=HTTPBasicAuth(self.ctl_user, self.ctl_password))
-        return {'flow_id':flow_id, 'status':response.status_code, 'content': response.content}
+        return {'status':response.status_code, 'content': response.content}
     
 
     def getNodeId(self, ofdpi):

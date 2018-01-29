@@ -8,14 +8,14 @@
       "direction":"BIDIRECTIONAL",
       "role":"SYMMETRIC",
       "service-interface-point":
-          "/restconf/config/context/service-interface-point/sip-pe1-uni1"
+          "/restconf/config/context/service-interface-point/sip11"
     }, 
     { "local-id":"csep-2",
      "layer-protocol-name":"ETH",
      "direction":"BIDIRECTIONAL",
      "role":"SYMMETRIC",
      "service-interface-point":
-         "/restconf/config/context/service-interface-point/sip-pe2-uni1"
+         "/restconf/config/context/service-interface-point/sip21"
     } 
   ] 
 }

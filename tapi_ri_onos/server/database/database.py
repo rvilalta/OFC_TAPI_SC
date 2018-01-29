@@ -3,3 +3,6 @@
 import logging
 
 context = { }
+orch_instance = None 
+
+ONOS=1

@@ -8,45 +8,46 @@ class Orchestrator:
         self.onos=onos
         self.network_manager=network_manager.network_manager()
 
-    def create_tunnel(self, name, tunnel):
-        #check if named-explicit-path
-        
-        nep = tunnel['p2p-primary-paths']['p2p-primary-path'][0]['config']['named-explicit-path']
-        logging.debug("Looking nep %s", nep)
-        rro_subobject = []
-        found=False
-        for nepid in database.te['te']['globals']['named-explicit-paths']['named-explicit-path']:
-            logging.debug("looking nep %s %s", nep, nepid)
-            if nep == nepid['name']:
-                logging.debug("Found named-explicit-path: %s", nep )
-                found=True
-                #construct rro
-                for ero_item in nepid['explicit-route-objects']['explicit-route-object']:
-                  rro={}
-                  logging.debug("Reading ero %s", ero_item)
-                  rro['index']=ero_item['index']
-                  rro['unnumbered']={}
-                  rro['unnumbered']['node-id'] = ero_item['config']['unnumbered-hop']['router-id']
-                  rro['unnumbered']['link-tp-id'] = ero_item['config']['unnumbered-hop']['interface-id']
-                  rro_subobject.append (rro)  
-        if not found:
-          return found    
-                
-        #construct lsp
-        lsp = {
-                'tunnel-id' : name,
-                'lsp-id' : name,
-                'lsp-record-route-subobjects' : {
-                  'record-route-subobject' : rro_subobject
-                }
-              }
-        database.te['te']['lsps-state']['lsp'].append(lsp)
-        database.te['te']['tunnels']['tunnel'].append(tunnel)
-        return found
+    def create_connectivity_service(self, uuid, connectivity_service):
+      logging.info("create_connectivity_service %s %s", uuid, connectivity_service)
 
-    def delete_tunnel(self, name):
-        logging.info("delete_tunnel %s", name)
-        for lsp in database.te['te']['lsps-state']['lsp']:
-            if lsp['tunnel-id'] == name :
-                logging.debug("removing lsp with tunnel-id %s", lsp['tunnel-id'] )
-                database.te['te']['lsps-state']['lsp'].remove(lsp)
+      connection = {
+        "uuid" : uuid,
+        "connection-end-point" : [] #We only include a reference to nep - This should be extended as a nep can contain several cep
+      }
+      
+      src = connectivity_service['end-point'][0]['service-interface-point']
+      dst = connectivity_service['end-point'][-1]['service-interface-point']
+      
+      #we assume sip encodes node and port info - and connectivity service is of a direct link between ports
+      src_node=src.split("sip")[1].split("/")[0][1]
+      src_port=src.split("sip")[1].split("/")[0][0]
+      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+src_node + "/owned-node-edge-point/nep"+ src_node + src_port + "/" )
+      dst_node=dst.split("sip")[1].split("/")[0][1]
+      dst_port=dst.split("sip")[1].split("/")[0][0]
+      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+dst_node + "/owned-node-edge-point/nep"+ dst_node + dst_port + "/" )
+      logging.info("create_connectivity_service %s %s", src, dst)
+      self.network_manager.insertFlow( uuid, "of:000000000000000" + src_node, "0", src_port)
+      self.network_manager.insertFlow( uuid, "of:000000000000000" + dst_node, dst_port, "0")
+      
+      #storing db
+      database.context['connection'].append(connection)
+      connectivity_service['connection'] = [ "/restconf/config/connection/" + uuid + "/" ]
+      database.context['connectivity-service'].append(connectivity_service)
+
+        
+      return connectivity_service
+
+    def delete_connectivity_service(self, uuid):
+      logging.info("delete_connectivity_service %s", uuid)  
+      self.network_manager.removeFlows(uuid)  
+      
+      for connection in database.context['connection']:
+          if connection['uuid'] == uuid :
+              database.context['connection'].remove(connection)
+              
+      for cs in database.context['connectivity-service']:
+          if cs['uuid'] == uuid :
+              database.context['connectivity-service'].remove(cs)
+              return "done"
+              

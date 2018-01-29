@@ -17,9 +17,10 @@ if __name__ == '__main__':
     app.app.config['JSON_SORT_KEYS']=False
     
     #Starting orchestrator    
-    orch = orchestrator.Orchestrator(ONOS)
-    database.orch_instance=orch
+    database.ONOS=ONOS
     if ONOS == 1:
+      orch = orchestrator.Orchestrator(ONOS)
+      database.orch_instance=orch
       database.context = {
         "service-interface-point" : [ ],
         "topology" : [ ],
