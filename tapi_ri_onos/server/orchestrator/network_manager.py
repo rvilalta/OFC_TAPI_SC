@@ -53,7 +53,7 @@ class network_manager():
             node_json = collections.OrderedDict()
             node_json['uuid'] = "node" + self.getNodeId(node['id'])            
             node_json['owned-node-edge-point'] = node_edge_point
-            
+            node_json['layer-protocol-name'] = [ 'ETH' ]
             node_array.append( node_json )
         
 
@@ -71,7 +71,8 @@ class network_manager():
             nep_src = "/restconf/config/context/topology/top0/node/node" + self.getNodeId(link['src']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['src']['device']) + link['src']['port'] + "/"
             nep_dst = "/restconf/config/context/topology/top0/node/node" + self.getNodeId(link['dst']['device']) + "/owned-node-edge-point/nep" + self.getNodeId(link['dst']['device']) + link['dst']['port'] + "/"
             link_json['node-edge-point'].append(nep_src)
-            link_json['node-edge-point'].append(nep_dst)    
+            link_json['node-edge-point'].append(nep_dst) 
+            link_json['layer-protocol-name'] = [ 'ETH' ]   
             link_array.append( link_json )
         
         
