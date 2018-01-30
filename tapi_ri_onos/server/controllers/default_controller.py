@@ -12,7 +12,11 @@ def create_context_connectivity_service_connectivity_service_by_id(uuid, connect
     logging.info("create_context_connectivity_service_connectivity_service_by_id %s %s", uuid, connectivityService)
     if database.ONOS==0:
       connection = {
-        "uuid" : uuid
+        "uuid" : uuid,
+        "connection-end-point": [
+           "/restconf/config/topology/top0/node/node1/owned-node-edge-point/nep11/cep-list/cep11",
+           "/restconf/config/topology/top0/node/node1/owned-node-edge-point/nep12/cep-list/cep11"
+        ]
       }
       database.context['connection'].append(connection)
       connectivityService['connection'] = [ "/restconf/config/connection/" + uuid + "/" ]

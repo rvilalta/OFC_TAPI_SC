@@ -2,9 +2,12 @@
 
 import connexion
 import json
+import logging
 
 from flask import current_app
 import database.database as database
+
+logging.basicConfig(level=logging.DEBUG)
 
 if __name__ == '__main__':
     app = connexion.App(__name__, specification_dir='swagger/')

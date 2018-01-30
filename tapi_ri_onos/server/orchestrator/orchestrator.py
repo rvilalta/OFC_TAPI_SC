@@ -22,10 +22,10 @@ class Orchestrator:
       #we assume sip encodes node and port info - and connectivity service is of a direct link between ports
       src_node=src.split("sip")[1].split("/")[0][1]
       src_port=src.split("sip")[1].split("/")[0][0]
-      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+src_node + "/owned-node-edge-point/nep"+ src_node + src_port + "/" )
+      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+src_node + "/owned-node-edge-point/nep" + src_node + src_port + "/cep-list/cep"  + src_node + src_port + "/" )
       dst_node=dst.split("sip")[1].split("/")[0][1]
       dst_port=dst.split("sip")[1].split("/")[0][0]
-      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+dst_node + "/owned-node-edge-point/nep"+ dst_node + dst_port + "/" )
+      connection['connection-end-point'].append( "/restconf/config/topology/top0/node/node"+dst_node + "/owned-node-edge-point/nep" + dst_node + dst_port + "/cep-list/cep"  + dst_node + dst_port + "/" )
       logging.info("create_connectivity_service %s %s", src, dst)
       self.network_manager.insertFlow( uuid, "of:000000000000000" + src_node, "0", src_port)
       self.network_manager.insertFlow( uuid, "of:000000000000000" + dst_node, dst_port, "0")
