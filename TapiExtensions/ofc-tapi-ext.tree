@@ -1,5 +1,0 @@
-module: ofc-tapi-ext
-  augment /tapi-common:context/tapi-topology:topology/tapi-topology:node:
-    +--ro part-info* [serial-number]
-       +--ro model-type?      string
-       +--ro serial-number    string
