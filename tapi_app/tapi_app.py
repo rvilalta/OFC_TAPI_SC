@@ -37,7 +37,7 @@ def draw_topologies (topologies) :
             if node['owned-node-edge-point']:
                 uuid = node['uuid']
                 layer = node['layer-protocol-name'][0]
-                posx = uuid.split('-')[3]
+                posx = int( ''.join(x for x in uuid if x.isdigit() ) ) 
                 posy = 0
                 col = 'y'
                 if layer == 'ETH':
